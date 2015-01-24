@@ -1,3 +1,7 @@
+.metadata/.plugins
+.metadata/.mylyn
+.metadata/.log
+.metadata/.lock
 *.class
 
 # Package Files #
