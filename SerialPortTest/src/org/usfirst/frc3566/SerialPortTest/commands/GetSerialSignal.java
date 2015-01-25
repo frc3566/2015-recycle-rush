@@ -12,7 +12,10 @@
 package org.usfirst.frc3566.SerialPortTest.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+
 import org.usfirst.frc3566.SerialPortTest.Robot;
+import org.usfirst.frc3566.SerialPortTest.RobotMap;
+import org.usfirst.frc3566.SerialPortTest.subsystems.Serial_Port;
 
 /**
  *
@@ -31,10 +34,12 @@ public class  GetSerialSignal extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	Robot.oi.myPort.disableTermination();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	System.out.println(Robot.oi.myPort.getBytesReceived());
     }
 
     // Make this return true when this Command no longer needs to run execute()
