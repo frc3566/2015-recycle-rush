@@ -21,7 +21,7 @@ import org.usfirst.frc3566.SerialPortTest.subsystems.Serial_Port;
  *
  */
 public class  GetSerialSignal extends Command {
-
+	private int s;
     public GetSerialSignal() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -35,11 +35,20 @@ public class  GetSerialSignal extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	Robot.oi.myPort.disableTermination();
+    	Robot.oi.myPort.setReadBufferSize(1);
+    	Robot.oi.myPort.setTimeout(0.125);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	System.out.println(Robot.oi.myPort.getBytesReceived());
+    	try {
+    		s = Robot.oi.myPort.read(1)[0];
+        	System.out.println(s);
+        	//Robot.oi.myPort.reset();
+        } catch (Exception e) {
+            System.out.println("Error " + e.getMessage());
+            //s = null;
+        }
     }
 
     // Make this return true when this Command no longer needs to run execute()
