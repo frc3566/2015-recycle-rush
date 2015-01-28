@@ -11,14 +11,17 @@
 
 package org.usfirst.frc3566.Official_Competition_Code_2015.commands;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
+
 import org.usfirst.frc3566.Official_Competition_Code_2015.Robot;
+import org.usfirst.frc3566.Official_Competition_Code_2015.RobotConstants;
+import org.usfirst.frc3566.Official_Competition_Code_2015.RobotMap;
 
 /**
  *
  */
 public class  Mecanum_Drive extends Command {
-
     public Mecanum_Drive() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -35,6 +38,7 @@ public class  Mecanum_Drive extends Command {
 
     // Called repeatedly when this Commaned is scheduled to run
     protected void execute() {
+    	Robot.mecanum.Drive(RobotConstants.Robot_Mecanum_RunSpeed_Coefficient, RobotConstants.Robot_Mecanum_TurnSpeed_Coefficient);
     }
 
     // Make this return true when this Command no longer needs to run execute()
