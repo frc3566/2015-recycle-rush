@@ -43,7 +43,25 @@ public class Mecanum extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     public void Drive(double sr, double st){
-    	RobotMap.mecanumMecanum_Control.mecanumDrive_Cartesian(sr*Robot.oi.xBoxController.getRawAxis(0), sr*Robot.oi.xBoxController.getRawAxis(1), st*Robot.oi.xBoxController.getRawAxis(4), 0);
+    	double x;
+    	if (Math.abs(Robot.oi.xBoxController.getRawAxis(0))>0.15){
+    		x = (-1)*sr*Robot.oi.xBoxController.getRawAxis(0);
+    	} else {
+    		x = 0;
+    	}
+    	double y;
+    	if (Math.abs(Robot.oi.xBoxController.getRawAxis(1))>0.15){
+    		y = sr*Robot.oi.xBoxController.getRawAxis(1);
+    	} else {
+    		y = 0;
+    	}
+    	double rot;
+    	if (Math.abs(Robot.oi.xBoxController.getRawAxis(4))>0.15){
+    		rot = (-1)*st*Robot.oi.xBoxController.getRawAxis(4);
+    	} else {
+    		rot = 0;
+    	}
+    	RobotMap.mecanumMecanum_Control.mecanumDrive_Cartesian(x, y, rot, 0);
     }
 }
 
