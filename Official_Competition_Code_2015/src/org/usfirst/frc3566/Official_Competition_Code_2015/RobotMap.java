@@ -31,9 +31,10 @@ import java.util.Vector;
  */
 public class RobotMap {
 	public static CANTalon mecanumCAN_Talon_1; //FronTRight
+	public static CANTalon mecanumCAN_Talon_2; //RearRight
     public static CANTalon mecanumCAN_Talon_3; //FrontLeft
     public static CANTalon mecanumCAN_Talon_4; //RearLeft
-    public static CANTalon mecanumCAN_Talon_2; //RearRight
+    
     public static RobotDrive mecanumMecanum_Control;
     public static CANTalon elevatorCAN_Talon_5;
     public static CANTalon elevatorCAN_Talon_6;

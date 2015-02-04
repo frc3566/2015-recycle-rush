@@ -44,6 +44,9 @@ public class Mecanum extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     public void Drive(double sr, double st){
+    	/*
+    	 * Set lower limit of controller input
+    	 */
     	double x;
     	if (Math.abs(Robot.oi.xBoxController.getRawAxis(0))>0.15){
     		x = (-1)*sr*Robot.oi.xBoxController.getRawAxis(0);
@@ -62,6 +65,9 @@ public class Mecanum extends Subsystem {
     	} else {
     		rot = 0;
     	}
+        /*
+         * Exponential speed control
+         */
     	boolean xd=false;
     	xd=x>0;
     	boolean yd=false;
