@@ -43,25 +43,30 @@ public class Mecanum extends Subsystem {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
-    public void Drive(double sr, double st){
+    /**
+     * This function drives the robot with 4 wheels mecanum drivetrain
+     * @param runSpeedCoefficient Run speed coefficient
+     * @param turnSpeedCoefficient Turn speed coefficient
+     */
+    public void Drive(double runSpeedCoefficient, double turnSpeedCoefficient){
     	/*
     	 * Set lower limit of controller input
     	 */
     	double x;
     	if (Math.abs(Robot.oi.xBoxController.getRawAxis(0))>0.15){
-    		x = (-1)*sr*Robot.oi.xBoxController.getRawAxis(0);
+    		x = (-1)*runSpeedCoefficient*Robot.oi.xBoxController.getRawAxis(0);
     	} else {
     		x = 0;
     	}
     	double y;
     	if (Math.abs(Robot.oi.xBoxController.getRawAxis(1))>0.15){
-    		y = sr*Robot.oi.xBoxController.getRawAxis(1);
+    		y = runSpeedCoefficient*Robot.oi.xBoxController.getRawAxis(1);
     	} else {
     		y = 0;
     	}
     	double rot;
     	if (Math.abs(Robot.oi.xBoxController.getRawAxis(4))>0.15){
-    		rot = (-1)*st*Robot.oi.xBoxController.getRawAxis(4);
+    		rot = (-1)*turnSpeedCoefficient*Robot.oi.xBoxController.getRawAxis(4);
     	} else {
     		rot = 0;
     	}

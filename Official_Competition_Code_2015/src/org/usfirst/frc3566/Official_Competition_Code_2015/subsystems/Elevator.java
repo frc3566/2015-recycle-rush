@@ -42,21 +42,39 @@ public class Elevator extends Subsystem {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
+    /**
+     * This function uses motor A to raise elevator
+     */
     public void raiseElevator_A(){
     	Elevator_A.set(RobotConstants.Robot_Elevator_RaiseSpeed_A_Coefficient);
     }
+    /**
+     * This function stops motor A to stop elevator
+     */
     public void stopElevator_A(){
     	Elevator_A.set(0.0);
     }
+    /**
+     * This function uses motor A to lower elevator
+     */
     public void lowerElevator_A(){
     	Elevator_A.set(RobotConstants.Robot_Elevator_LowerSpeed_A_Coefficient);
     }
+    /**
+     * This function uses motor B to raise elevator
+     */
     public void raiseElevator_B(){
     	Elevator_B.set(RobotConstants.Robot_Elevator_RaiseSpeed_B_Coefficient);
     }
+    /**
+     * This function stops motor B to stop elevator
+     */
     public void stopElevator_B(){
     	Elevator_B.set(0.0);
     }
+    /**
+     * This function uses motor B to lower elevator
+     */
     public void lowerElevator_B(){
     	Elevator_B.set(RobotConstants.Robot_Elevator_LowerSpeed_B_Coefficient);
     }
