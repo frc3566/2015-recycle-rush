@@ -29,7 +29,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Elevator extends Subsystem {
 	
-	public final double ElevatorZeroPoint = 0.8;
+	public final double ElevatorZeroPoint = 1.9;
 	
 	TalonSRX Elevator_A = RobotMap.elevatorElevator_A;
     TalonSRX Elevator_B = RobotMap.elevatorElevator_B;

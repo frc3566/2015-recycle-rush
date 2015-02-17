@@ -1,5 +1,13 @@
 <xml version="1.0">
 <dashboard>
+	<widget field="Reset Elevator" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="42" y="183"/>
+	</widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.VideoStreamViewerExtension">
+		<location x="267" y="318"/>
+		<width>223</width>
+		<height>329</height>
+	</static-widget>
 	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.Label">
 		<location x="100" y="536"/>
 		<property name="Text" value="Connected to Robot"/>
@@ -30,23 +38,23 @@
 		<height>46</height>
 	</widget>
 	<widget field="B4" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
-		<location x="367" y="359"/>
+		<location x="394" y="236"/>
 		<width>85</width>
 		<height>67</height>
 	</widget>
 	<widget field="B3" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
-		<location x="252" y="355"/>
+		<location x="272" y="236"/>
 		<width>85</width>
 		<height>65</height>
 	</widget>
 	<widget field="B2" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
-		<location x="158" y="355"/>
+		<location x="158" y="237"/>
 		<width>75</width>
 		<height>63</height>
 	</widget>
 	<widget field="B1" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
-		<location x="61" y="354"/>
-		<width>70</width>
+		<location x="44" y="236"/>
+		<width>79</width>
 		<height>64</height>
 	</widget>
 	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.ConnectionIndicator">
@@ -66,7 +74,7 @@
 		<location x="267" y="132"/>
 	</widget>
 	<widget field="Autonomous Command" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="143" y="266"/>
+		<location x="36" y="423"/>
 	</widget>
 	<widget field="RaisePicker" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
 		<location x="271" y="98"/>
