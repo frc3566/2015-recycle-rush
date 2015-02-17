@@ -1,0 +1,60 @@
+<xml version="1.0">
+<dashboard>
+	<widget field="PickerPosition" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="448"/>
+	</widget>
+	<widget field="ElevatorPosition" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="427"/>
+	</widget>
+	<widget field="E5" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="406"/>
+	</widget>
+	<widget field="E4" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="385"/>
+	</widget>
+	<widget field="E3" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="364"/>
+	</widget>
+	<widget field="E2" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="343"/>
+	</widget>
+	<widget field="E1" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="322"/>
+	</widget>
+	<widget field="B4" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="301"/>
+	</widget>
+	<widget field="B3" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="280"/>
+	</widget>
+	<widget field="B2" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="259"/>
+	</widget>
+	<widget field="B1" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="238"/>
+	</widget>
+	<widget field="RaiseElevator" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="204"/>
+	</widget>
+	<widget field="LowerPicker" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="170"/>
+	</widget>
+	<widget field="Autonomous Command" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="136"/>
+	</widget>
+	<widget field="RaisePicker" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="102"/>
+	</widget>
+	<widget field="StopElevator" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="68"/>
+	</widget>
+	<widget field="StopPicker" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="34"/>
+	</widget>
+	<widget field="LowerElevator" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="0"/>
+	</widget>
+</dashboard>
+<live-window>
+</live-window>
+</xml>
