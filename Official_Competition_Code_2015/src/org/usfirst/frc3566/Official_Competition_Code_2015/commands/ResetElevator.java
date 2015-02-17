@@ -19,7 +19,7 @@ import org.usfirst.frc3566.Official_Competition_Code_2015.Robot;
  */
 public class  ResetElevator extends Command {
 	private boolean isRaising;
-	private final double tolerance = 0.1;
+	private final double tolerance = 0.01;
 	
     public ResetElevator() {
         // Use requires() here to declare subsystem dependencies
@@ -33,10 +33,10 @@ public class  ResetElevator extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	if (Math.abs(Robot.elevator.getPositionPotentiometer() - Robot.elevator.ElevatorZeroPoint) < tolerance) {
+    	if (Math.abs(Robot.elevator.getPositionPotentiometer() - Robot.elevator.elevatorZeroPosition) < tolerance) {
     		end();
     	} else {
-    		if (Robot.elevator.getPositionPotentiometer() > Robot.elevator.ElevatorZeroPoint) {
+    		if (Robot.elevator.getPositionPotentiometer() > Robot.elevator.elevatorZeroPosition) {
     			isRaising = false;
     			Robot.elevator.lowerElevator();
     		} else {
@@ -53,8 +53,8 @@ public class  ResetElevator extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	return ((isRaising && Robot.elevator.getPositionPotentiometer() > Robot.elevator.ElevatorZeroPoint) ||
-    			(!isRaising && Robot.elevator.getPositionPotentiometer() < Robot.elevator.ElevatorZeroPoint));
+    	return ((isRaising && Robot.elevator.getPositionPotentiometer() > Robot.elevator.elevatorZeroPosition) ||
+    			(!isRaising && Robot.elevator.getPositionPotentiometer() < Robot.elevator.elevatorZeroPosition));
     }
 
     // Called once after isFinished returns true
