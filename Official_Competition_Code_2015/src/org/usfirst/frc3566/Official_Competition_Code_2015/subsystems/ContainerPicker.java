@@ -32,11 +32,12 @@ public class ContainerPicker extends PIDSubsystem {
     
     //I Think you want to set setpoints.... based on the sensor readings.....
     //   e.g.:
-      public static final double ON_GROUND = 0.0,
-     
-    		AT_TOP = 0.0,
-    		GAME_READY_POSITION = 0.0,
-    		STOW_IT_FOR_TRANSPORT = 0.0;
+      public static final double 
+      
+      		ON_GROUND = 0.01, /* seems to get to 0.009, not zero */
+    		AT_TOP = 7.85, /* empirically */
+    		GAME_READY_POSITION = AT_TOP,
+    		STOW_IT_FOR_TRANSPORT = AT_TOP;
     		
     		
     
@@ -55,8 +56,8 @@ public class ContainerPicker extends PIDSubsystem {
         // setSetpoint() -  Sets where the PID controller should move the system
         //                  to
         // enable() - Enables the PID controller.
-        //this.setSetpoint(GAME_READY_POSITION);
-        //enable();
+        disable();
+        pickerMotor.set(0);
     }
     
     public void initDefaultCommand() {
@@ -94,14 +95,17 @@ public class ContainerPicker extends PIDSubsystem {
     }
     
     public void raiseContainerPicker() {
-    	pickerMotor.set(RobotConstants.Robot_Picker_RaiseSpeed_Coefficient);
-    }
+    	this.setSetpoint(AT_TOP);
+    	enable();
+   }
     
     public void lowerContainerPicker() {
-    	pickerMotor.set(RobotConstants.Robot_Picker_LowerSpeed_Coefficient);
+    	this.setSetpoint(ON_GROUND);
+    	enable();
     }
     
     public void stopContainerPicker() {
+    	disable();
     	pickerMotor.set(0);
     }
 }
