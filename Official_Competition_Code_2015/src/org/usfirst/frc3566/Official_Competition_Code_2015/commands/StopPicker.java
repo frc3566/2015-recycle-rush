@@ -31,6 +31,7 @@ public class  StopPicker extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	Robot.containerPicker.stopContainerPicker();
     }
 
     // Called repeatedly when this Command is scheduled to run

@@ -7,6 +7,6 @@ public class RobotConstants {
 	public static double Robot_Elevator_LowerSpeed_A_Coefficient = 0.85;
 	public static double Robot_Elevator_RaiseSpeed_B_Coefficient = -0.6;
 	public static double Robot_Elevator_LowerSpeed_B_Coefficient = 0.85;
-	public static double Robot_Picker_RaiseSpeed_Coefficient = 0.5;
-	public static double Robot_Picker_LowerSpeed_Coefficient = -0.5;
+	public static double Robot_Picker_RaiseSpeed_Coefficient = -0.4;
+	public static double Robot_Picker_LowerSpeed_Coefficient = 0.1;
 }
