@@ -91,7 +91,7 @@ Children:
         Offset: !!robotbuilder.data.properties.DoubleProperty {default: 0, name: Offset,
           validators: null, value: 0.0}
       Base: Analog Potentiometer
-      Name: Analog Potentiometer 1
+      Name: PickerPotentiometer
     - Children: []
       Properties:
         Type: !!robotbuilder.data.properties.ChoicesProperty
@@ -108,7 +108,7 @@ Children:
           validators: [PWMOutput]
           value: '7'
       Base: Speed Controller
-      Name: Speed Controller 1
+      Name: Picker
     Properties:
       Limit Output: !!robotbuilder.data.properties.BooleanProperty {default: false,
         name: Limit Output, validators: null, value: false}
@@ -135,7 +135,7 @@ Children:
         name: Input
         type: PIDSource
         validators: [ChildDropdownSelected]
-        value: ContainerPicker Analog Potentiometer 1
+        value: ContainerPicker PickerPotentiometer
       Maximum Output: !!robotbuilder.data.properties.DoubleProperty {default: 1, name: Maximum Output,
         validators: null, value: 1.0}
       Output: !!robotbuilder.data.properties.ChildSelectionProperty
@@ -143,7 +143,7 @@ Children:
         name: Output
         type: PIDOutput
         validators: [ChildDropdownSelected]
-        value: ContainerPicker Speed Controller 1
+        value: ContainerPicker Picker
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Default Command, type: Command, validators: null, value: None}
       Maximum Input: !!robotbuilder.data.properties.DoubleProperty {default: 5, name: Maximum Input,

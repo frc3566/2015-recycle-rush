@@ -50,8 +50,8 @@ public class RobotMap {
     public static DigitalInput bottomSwitchesB2;
     public static DigitalInput bottomSwitchesB3;
     public static DigitalInput bottomSwitchesB4;
-    public static AnalogPotentiometer containerPickerAnalogPotentiometer1;
-    public static SpeedController containerPickerSpeedController1;
+    public static AnalogPotentiometer containerPickerPickerPotentiometer;
+    public static SpeedController containerPickerPicker;
     public static DigitalInput conveyorSwitchE1;
     public static DigitalInput conveyorSwitchE2;
     public static DigitalInput conveyorSwitchE3;
@@ -127,11 +127,11 @@ public class RobotMap {
         bottomSwitchesB4 = new DigitalInput(3);
         LiveWindow.addSensor("BottomSwitches", "B4", bottomSwitchesB4);
         
-        containerPickerAnalogPotentiometer1 = new AnalogPotentiometer(0, 12.0, 0.0);
-        LiveWindow.addSensor("ContainerPicker", "Analog Potentiometer 1", containerPickerAnalogPotentiometer1);
+        containerPickerPickerPotentiometer = new AnalogPotentiometer(0, 12.0, 0.0);
+        LiveWindow.addSensor("ContainerPicker", "PickerPotentiometer", containerPickerPickerPotentiometer);
         
-        containerPickerSpeedController1 = new TalonSRX(7);
-        LiveWindow.addActuator("ContainerPicker", "Speed Controller 1", (TalonSRX) containerPickerSpeedController1);
+        containerPickerPicker = new TalonSRX(7);
+        LiveWindow.addActuator("ContainerPicker", "Picker", (TalonSRX) containerPickerPicker);
         
         conveyorSwitchE1 = new DigitalInput(4);
         LiveWindow.addSensor("ConveyorSwitch", "E1", conveyorSwitchE1);
