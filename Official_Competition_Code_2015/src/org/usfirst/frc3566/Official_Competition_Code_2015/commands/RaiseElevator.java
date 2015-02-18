@@ -33,8 +33,7 @@ public class  RaiseElevator extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.elevator.raiseElevator_A();
-    	Robot.elevator.raiseElevator_B();
+    	Robot.elevator.raiseElevator();
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -48,8 +47,7 @@ public class  RaiseElevator extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.elevator.stopElevator_A();
-    	Robot.elevator.stopElevator_B();
+    	Robot.elevator.stopElevator();
     }
 
     // Called when another command which requires one or more of the same

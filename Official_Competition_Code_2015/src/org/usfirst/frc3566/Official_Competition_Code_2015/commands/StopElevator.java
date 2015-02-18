@@ -31,8 +31,7 @@ public class  StopElevator extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.elevator.stopElevator_A();
-    	Robot.elevator.stopElevator_B();
+    	Robot.elevator.stopElevator();
     }
 
     // Called repeatedly when this Command is scheduled to run

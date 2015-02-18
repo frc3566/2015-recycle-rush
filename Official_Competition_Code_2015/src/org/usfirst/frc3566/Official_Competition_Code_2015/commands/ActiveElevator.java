@@ -17,9 +17,11 @@ import org.usfirst.frc3566.Official_Competition_Code_2015.Robot;
 /**
  *
  */
-public class  LowerElevator extends Command {
+public class  ActiveElevator extends Command {
 
-    public LowerElevator() {
+	private boolean lifting = false;
+	
+    public ActiveElevator() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 
@@ -31,12 +33,22 @@ public class  LowerElevator extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.elevator.lowerElevator();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-  
+    	if (!lifting) {
+        	if (!Robot.conveyorSwitch.getE5() && Robot.bottomSwitches.getB2() && Robot.bottomSwitches.getB3())
+        	{
+        		Robot.elevator.raiseElevator();
+        		lifting = true;
+        	}
+    	} else {
+    		if (Robot.conveyorSwitch.totesAligned()) {
+    			Robot.elevator.stopElevator();
+    			lifting = false;
+    		}
+    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
