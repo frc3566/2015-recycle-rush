@@ -39,6 +39,7 @@ public class  Mecanum_Drive extends Command {
 
     // Called repeatedly when this Commaned is scheduled to run
     protected void execute() {
+    	System.out.println(RobotMap.pdp.getCurrent(9));
     	Robot.mecanum.Drive(RobotConstants.Robot_Mecanum_RunSpeed_Coefficient, RobotConstants.Robot_Mecanum_TurnSpeed_Coefficient);   
     }
 
