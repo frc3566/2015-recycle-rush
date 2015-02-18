@@ -1,5 +1,8 @@
 <xml version="1.0">
 <dashboard>
+	<widget field="Autonomous" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="75" y="430"/>
+	</widget>
 	<widget field="Dump" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
 		<location x="107" y="380"/>
 	</widget>
@@ -76,9 +79,6 @@
 	<widget field="LowerPicker" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
 		<location x="267" y="132"/>
 	</widget>
-	<widget field="Autonomous Command" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="36" y="423"/>
-	</widget>
 	<widget field="RaisePicker" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
 		<location x="271" y="98"/>
 	</widget>
@@ -93,6 +93,16 @@
 	</widget>
 </dashboard>
 <live-window>
+	<widget field="PDP" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
+		<widget field="PDP" type="PowerDistributionPanel" class="edu.wpi.first.smartdashboard.livewindow.elements.PowerDistributionPanel">
+			<location x="6" y="16"/>
+			<height>195</height>
+			<width>238</width>
+		</widget>
+		<location x="551" y="282"/>
+		<width>250</width>
+		<height>218</height>
+	</widget>
 	<widget field="ConveyorSwitch" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
 		<widget field="E3" type="Digital Input" class="edu.wpi.first.smartdashboard.livewindow.elements.DigitalInputDisplay">
 			<location x="6" y="16"/>
@@ -134,7 +144,7 @@
 			<height>20</height>
 			<width>88</width>
 		</widget>
-		<location x="26" y="579"/>
+		<location x="36" y="308"/>
 		<width>100</width>
 		<height>63</height>
 	</widget>
@@ -204,4 +214,5 @@
 		<height>103</height>
 	</widget>
 </live-window>
+	<hidden field="Autonomous Command"/>
 </xml>
