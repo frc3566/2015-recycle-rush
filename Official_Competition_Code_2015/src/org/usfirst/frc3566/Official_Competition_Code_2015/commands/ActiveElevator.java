@@ -38,7 +38,7 @@ public class  ActiveElevator extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	if (!lifting) {
-        	if (!Robot.conveyorSwitch.getE5() && Robot.bottomSwitches.getB2() && Robot.bottomSwitches.getB3())
+        	if (!(Robot.conveyorSwitch.getE5() && Robot.bottomSwitches.getB2() && Robot.bottomSwitches.getB3()))
         	{
         		Robot.elevator.raiseElevator();
         		lifting = true;

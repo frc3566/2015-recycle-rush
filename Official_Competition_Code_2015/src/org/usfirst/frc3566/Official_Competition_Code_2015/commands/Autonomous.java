@@ -35,5 +35,10 @@ public class Autonomous extends CommandGroup {
         // a CommandGroup containing them would require both the chassis and the
         // arm.
     	addSequential(new ResetElevator());
+    	addSequential(new RaiseHookDistance());
+    	addSequential(new DriveStraight());
+    	addSequential(new RaiseHookDistance());
+    	addSequential(new DriveStraight());
+    	addSequential(new RaiseHookDistance());
     }
 }

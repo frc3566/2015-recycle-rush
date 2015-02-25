@@ -11,7 +11,7 @@ Children:
           default: '0'
           name: Input Channel (Analog)
           validators: [AnalogInput]
-          value: '2'
+          value: '3'
       Base: Analog Input
       Name: Ultrasonic
     Properties:
@@ -95,7 +95,7 @@ Children:
           default: '0'
           name: Input Channel (Analog)
           validators: *id004
-          value: '0'
+          value: '2'
         Full Range: !!robotbuilder.data.properties.DoubleProperty {default: 1, name: Full Range,
           validators: null, value: 12.0}
         Offset: !!robotbuilder.data.properties.DoubleProperty {default: 0, name: Offset,

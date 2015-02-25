@@ -21,7 +21,6 @@ import org.usfirst.frc3566.Official_Competition_Code_2015.RobotMap;
  *
  */
 public class  DriveStraight extends Command {
-
     public DriveStraight() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -35,21 +34,26 @@ public class  DriveStraight extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	this.setTimeout(10);
-    	RobotMap.mecanumMecanum_Control.arcadeDrive(RobotConstants.Robot_Mecanum_RunSpeed_Coefficient, 0);
+    	RobotMap.mecanumMecanum_Control.arcadeDrive(RobotConstants.Robot_Mecanum_RunSpeed_Coefficient, -RobotMap.gyro1.getAngle()*RobotConstants.Robot_Gyro_Constant);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	//currentPosition=Robot.mecanum.findRange();
+    	//if (Math.abs(initialPosition-currentPosition)>2){
+    		//RobotMap.mecanumMecanum_Control.arcadeDrive(RobotConstants.Robot_Mecanum_RunSpeed_Coefficient, (currentPosition-initialPosition)/20);
+    	//}
+        
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() { 
-        return ((Robot.bottomSwitches.getB1())&&(Robot.bottomSwitches.getB2())&&(Robot.bottomSwitches.getB3())&&(Robot.bottomSwitches.getB4()))||this.isTimedOut(); 
+        return (Robot.bottomSwitches.getB2()&&Robot.bottomSwitches.getB3());
     }
 
     // Called once after isFinished returns true
     protected void end() {
-    	RobotMap.mecanumMecanum_Control.stopMotor();
+    	RobotMap.mecanumMecanum_Control.arcadeDrive(0,0);
     }
 
     // Called when another command which requires one or more of the same

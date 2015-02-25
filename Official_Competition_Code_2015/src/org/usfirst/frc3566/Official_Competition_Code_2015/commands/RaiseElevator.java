@@ -20,7 +20,6 @@ import org.usfirst.frc3566.Official_Competition_Code_2015.RobotConstants;
  *
  */
 public class  RaiseElevator extends Command {
-
     public RaiseElevator() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
