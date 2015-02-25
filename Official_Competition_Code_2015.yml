@@ -3,7 +3,17 @@ Version 1.5
 ---
 Children:
 - Children:
-  - Children: []
+  - Children:
+    - Children: []
+      Properties:
+        Input Channel (Analog): !!robotbuilder.data.properties.ChoicesProperty
+          choices: ['0', '1', '2', '3', '4', '5', '6', '7']
+          default: '0'
+          name: Input Channel (Analog)
+          validators: [AnalogInput]
+          value: '2'
+      Base: Analog Input
+      Name: Ultrasonic
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Default Command, type: Command, validators: null, value: Mecanum_Drive}
@@ -322,6 +332,14 @@ Children:
         name: Button on SmartDashboard, validators: null, value: false}
     Base: Command
     Name: RaiseHookDistance
+  - Children: []
+    Properties:
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: Mecanum}
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+    Base: Command
+    Name: DriveStraight
   Properties: {}
   Base: Commands
   Name: Commands

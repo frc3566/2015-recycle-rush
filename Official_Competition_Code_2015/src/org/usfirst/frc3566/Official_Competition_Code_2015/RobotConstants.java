@@ -7,4 +7,5 @@ public class RobotConstants {
 	public static double Robot_Elevator_LowerSpeed_A_Coefficient = 0.85;
 	public static double Robot_Elevator_RaiseSpeed_B_Coefficient = -0.6;
 	public static double Robot_Elevator_LowerSpeed_B_Coefficient = 0.85;
+	public static double Robot_Ultrasonic_RangeFinder_Coefficient = 200;
 }
