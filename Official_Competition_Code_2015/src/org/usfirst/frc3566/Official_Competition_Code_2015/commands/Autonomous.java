@@ -26,19 +26,10 @@ public class Autonomous extends CommandGroup {
     	addParallel(new Creep());
     	addSequential(new RaiseHookDistance());
     	
-    	/* lift first barrel */
-    	addSequential(new RaisePicker());
-    	addParallel(new LowerPicker());
-    	
-    	/* lift second tote */
-    	addSequential(new DriveStraight());
-    	addParallel(new Creep());
-    	addSequential(new RaiseHookDistance());
-    	
-    	/* lift second barrel */
+    	/* lift barrel */
     	addSequential(new LiftAndHoldPicker());
     	
-    	/* lift third tote */
+    	/* lift second tote */
     	addSequential(new DriveStraight());
     	addParallel(new Creep());
     	addSequential(new RaiseHookDistance());
