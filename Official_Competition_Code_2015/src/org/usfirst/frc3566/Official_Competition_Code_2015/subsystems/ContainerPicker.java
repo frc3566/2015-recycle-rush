@@ -36,6 +36,7 @@ public class ContainerPicker extends PIDSubsystem {
       
       		ON_GROUND = 0.01, /* seems to get to 0.009, not zero */
     		AT_TOP = 7.85, /* empirically */
+    		HOLD_POINT = 3, /* W.A.G. */
     		GAME_READY_POSITION = AT_TOP,
     		STOW_IT_FOR_TRANSPORT = AT_TOP;
     		

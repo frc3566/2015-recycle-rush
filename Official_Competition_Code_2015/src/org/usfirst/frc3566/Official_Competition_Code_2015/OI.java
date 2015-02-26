@@ -96,6 +96,8 @@ public class OI {
 
         SmartDashboard.putData("StopPicker", new StopPicker());
 
+        SmartDashboard.putData("LiftAndHoldPicker", new LiftAndHoldPicker());
+
         SmartDashboard.putData("Dump", new Dump());
 
         SmartDashboard.putData("DriveStraight", new DriveStraight());

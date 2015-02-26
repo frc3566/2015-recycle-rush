@@ -20,41 +20,33 @@ import org.usfirst.frc3566.Official_Competition_Code_2015.RobotMap;
 /**
  *
  */
-public class  DriveStraight extends Command {
-	double initialAngle;
-	double timeout;
-    public DriveStraight() {
-    	this(10);
+public class  TurnAngle extends Command {
+
+	private double initialAngle, targetAngle;
+	
+    public TurnAngle() {
+        this(90);
     }
     
-    public DriveStraight(double timeout) {
+    public TurnAngle(double angle) {
     	requires(Robot.mecanum);
-    	this.timeout = timeout;
+    	initialAngle = RobotMap.gyro1.getAngle();
+    	targetAngle = (initialAngle + angle) % 360;
     }
 
     // Called just before this Command runs the first time
-    double currentAngle;
-    double diffAngle;
     protected void initialize() {
-    	this.setTimeout(timeout);
-    	initialAngle = RobotMap.gyro1.getAngle();
+    	
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	currentAngle = RobotMap.gyro1.getAngle();
-    	diffAngle = initialAngle-currentAngle;
-    	RobotMap.mecanumMecanum_Control.mecanumDrive_Polar(RobotConstants.Robot_Autonomous_DriveSpeed, 0, -(diffAngle*RobotConstants.Robot_Gyro_Constant));
-    	//currentPosition=Robot.mecanum.findRange();
-    	//if (Math.abs(initialPosition-currentPosition)>2){
-    		//RobotMap.mecanumMecanum_Control.arcadeDrive(RobotConstants.Robot_Mecanum_RunSpeed_Coefficient, (currentPosition-initialPosition)/20);
-    	//}
-        
+    	RobotMap.mecanumMecanum_Control.mecanumDrive_Polar(0, (initialAngle < targetAngle ? 1 : -1), RobotConstants.Robot_Autonomous_DriveSpeed);
     }
 
     // Make this return true when this Command no longer needs to run execute()
-    protected boolean isFinished() { 
-        return (Robot.bottomSwitches.getB2()||Robot.bottomSwitches.getB3())||this.isTimedOut();
+    protected boolean isFinished() {
+        return Math.abs(RobotMap.gyro1.getAngle() - targetAngle) < 2;
     }
 
     // Called once after isFinished returns true

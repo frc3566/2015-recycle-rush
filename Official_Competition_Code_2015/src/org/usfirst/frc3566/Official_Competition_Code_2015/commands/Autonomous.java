@@ -18,31 +18,36 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class Autonomous extends CommandGroup {
     
     public  Autonomous() {
-        // Add Commands here:
-        // e.g. addSequential(new Command1());
-        //      addSequential(new Command2());
-        // these will run in order.
-
-        // To run multiple commands at the same time,
-        // use addParallel()
-        // e.g. addParallel(new Command1());
-        //      addSequential(new Command2());
-        // Command1 and Command2 will run in parallel.
-
-        // A command group will require all of the subsystems that each member
-        // would require.
-        // e.g. if Command1 requires chassis, and Command2 requires arm,
-        // a CommandGroup containing them would require both the chassis and the
-        // arm.
-    	//addSequential(new ResetElevator());
-    	//addSequential(new LowerPicker());
-    	//addSequential(new RaisePicker());
-    	//addSequential(new RaiseHookDistance());
+    	/* ready position */
+    	addParallel(new LowerPicker());
+    	
+    	/* approach and lift first tote */
     	addSequential(new DriveStraight());
     	addParallel(new Creep());
     	addSequential(new RaiseHookDistance());
+    	
+    	/* lift first barrel */
+    	addSequential(new RaisePicker());
+    	addParallel(new LowerPicker());
+    	
+    	/* lift second tote */
     	addSequential(new DriveStraight());
     	addParallel(new Creep());
     	addSequential(new RaiseHookDistance());
+    	
+    	/* lift second barrel */
+    	addSequential(new LiftAndHoldPicker());
+    	
+    	/* lift third tote */
+    	addSequential(new DriveStraight());
+    	addParallel(new Creep());
+    	addSequential(new RaiseHookDistance());
+    	
+    	/* run to the auto zone */
+    	addSequential(new TurnAngle(90));
+    	addSequential(new DriveStraight(3));
+    	
+    	/* stack totes */
+    	addSequential(new Dump());
     }
 }
