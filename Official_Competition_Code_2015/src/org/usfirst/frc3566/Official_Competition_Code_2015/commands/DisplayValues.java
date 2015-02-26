@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc3566.Official_Competition_Code_2015.Robot;
+import org.usfirst.frc3566.Official_Competition_Code_2015.RobotMap;
 
 /**
  *
@@ -55,6 +56,8 @@ public class  DisplayValues extends Command {
         SmartDashboard.putBoolean("E4", Robot.conveyorSwitch.getE4());
         
         SmartDashboard.putBoolean("E5", Robot.conveyorSwitch.getE5());
+        
+        SmartDashboard.putDouble("Gyro", RobotMap.gyro1.getAngle());
         
         SmartDashboard.putDouble("ElevatorPosition", Robot.elevator.getPositionPotentiometer());
         
