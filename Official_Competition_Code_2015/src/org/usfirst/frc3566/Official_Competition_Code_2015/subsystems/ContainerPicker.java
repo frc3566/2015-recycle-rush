@@ -93,7 +93,7 @@ public class ContainerPicker extends PIDSubsystem {
     public double getPickerPotentiometer() {
     	return pickerPotentiometer.get();
     }
-    
+    /*
     public void raiseContainerPicker() {
     	this.setSetpoint(AT_TOP);
     	enable();
@@ -102,6 +102,11 @@ public class ContainerPicker extends PIDSubsystem {
     public void lowerContainerPicker() {
     	this.setSetpoint(ON_GROUND);
     	enable();
+    }
+    */
+    
+    public void setPickerMotor(double speed) {
+    	pickerMotor.set(speed);
     }
     
     public void stopContainerPicker() {

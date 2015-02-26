@@ -11,4 +11,6 @@ public class RobotConstants {
 	public static double Robot_Ultrasonic_RangeFinder_Coefficient = 200;
 	public static double Robot_Gyro_Constant = 0.03;
 	public static double Robot_RaiseElevator_Distance = 1.22;
+	public static double Robot_Picker_RaiseSpeed_Coefficient = 0.5;
+	public static double Robot_Picker_LowerSpeed_Coefficient = 0.5;
 }

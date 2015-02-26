@@ -12,7 +12,9 @@
 package org.usfirst.frc3566.Official_Competition_Code_2015.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+
 import org.usfirst.frc3566.Official_Competition_Code_2015.Robot;
+import org.usfirst.frc3566.Official_Competition_Code_2015.RobotConstants;
 
 /**
  *
@@ -31,7 +33,7 @@ public class  LowerPicker extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.containerPicker.lowerContainerPicker();
+    	Robot.containerPicker.setPickerMotor(RobotConstants.Robot_Picker_LowerSpeed_Coefficient);
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -40,7 +42,7 @@ public class  LowerPicker extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return Robot.containerPicker.getPickerPotentiometer() == Robot.containerPicker.ON_GROUND;
     }
 
     // Called once after isFinished returns true
