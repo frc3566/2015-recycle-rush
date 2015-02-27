@@ -22,7 +22,7 @@ import org.usfirst.frc3566.Official_Competition_Code_2015.RobotConstants;
 public class  RaiseHookDistance extends Command {
 	double currentPosition;
     double initialPosition;
-    double distance;
+    double distance=0;
     boolean distanceReached;
     public RaiseHookDistance() {
         // Use requires() here to declare subsystem dependencies
@@ -36,6 +36,7 @@ public class  RaiseHookDistance extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	this.setTimeout(4);
     	distanceReached=false;
     	initialPosition = Robot.elevator.getPositionPotentiometer();
     	distance = 0;
@@ -54,7 +55,7 @@ public class  RaiseHookDistance extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return distanceReached;
+        return distanceReached||this.isTimedOut();
     }
 
     // Called once after isFinished returns true

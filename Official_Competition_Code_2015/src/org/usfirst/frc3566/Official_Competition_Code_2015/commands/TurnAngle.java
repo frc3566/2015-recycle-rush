@@ -22,7 +22,7 @@ import org.usfirst.frc3566.Official_Competition_Code_2015.RobotMap;
  */
 public class  TurnAngle extends Command {
 
-	private double initialAngle, targetAngle;
+	private double initialAngle, targetAngle,currentAngle,rotSpeed;
 	
     public TurnAngle() {
         this(90);
@@ -31,7 +31,7 @@ public class  TurnAngle extends Command {
     public TurnAngle(double angle) {
     	requires(Robot.mecanum);
     	initialAngle = RobotMap.gyro1.getAngle();
-    	targetAngle = (initialAngle + angle) % 360;
+    	targetAngle = (initialAngle + angle);
     }
 
     // Called just before this Command runs the first time
@@ -41,12 +41,18 @@ public class  TurnAngle extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	RobotMap.mecanumMecanum_Control.mecanumDrive_Polar(0, (initialAngle < targetAngle ? 1 : -1), RobotConstants.Robot_Autonomous_DriveSpeed);
+    	currentAngle=RobotMap.gyro1.getAngle();
+    	if (currentAngle<targetAngle){
+    		rotSpeed=0.5;
+    	} else{
+    		rotSpeed=-0.5;
+    	}
+    	RobotMap.mecanumMecanum_Control.mecanumDrive_Polar(0, 0, -rotSpeed);;
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Math.abs(RobotMap.gyro1.getAngle() - targetAngle) < 2;
+        return Math.abs(targetAngle-currentAngle)<10;
     }
 
     // Called once after isFinished returns true

@@ -45,8 +45,7 @@ public class  DriveStraight extends Command {
     	currentAngle = RobotMap.gyro1.getAngle();
     	diffAngle = initialAngle-currentAngle;
     	RobotMap.mecanumMecanum_Control.mecanumDrive_Polar(RobotConstants.Robot_Autonomous_DriveSpeed, 0, -(diffAngle*RobotConstants.Robot_Gyro_Constant));
-    	//currentPosition=Robot.mecanum.findRange();
-    	//if (Math.abs(initialPosition-currentPosition)>2){
+     	//if (Math.abs(initialPosition-currentPosition)>2){
     		//RobotMap.mecanumMecanum_Control.arcadeDrive(RobotConstants.Robot_Mecanum_RunSpeed_Coefficient, (currentPosition-initialPosition)/20);
     	//}
         
@@ -54,7 +53,7 @@ public class  DriveStraight extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() { 
-        return (Robot.bottomSwitches.getB2()||Robot.bottomSwitches.getB3())||this.isTimedOut();
+        return (Robot.bottomSwitches.getB2()||this.isTimedOut());
     }
 
     // Called once after isFinished returns true

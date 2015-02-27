@@ -18,12 +18,13 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class Autonomous extends CommandGroup {
     
 	public Autonomous() {
-		this(1, 1);
+		this(1, 0);
 	}
 	
 	public Autonomous(int totes, int barrels) {
     	/* ready position */
-    	addParallel(new LowerPicker());
+    	//addParallel(new LowerPicker());
+		addSequential(new Dump());
     	
     	if (totes > 0) {
         	/* approach and lift first tote */
@@ -31,9 +32,9 @@ public class Autonomous extends CommandGroup {
         	
         	if (barrels == 1) {
             	/* lift barrel */
-            	addSequential(new LiftAndHoldPicker());
+            	//addSequential(new LiftAndHoldPicker());
         	} else if (barrels > 1) {
-        		addSequential(new RaisePicker());
+        		//addSequential(new RaisePicker());
         		addParallel(new LowerPicker());
         	}
         	
@@ -52,7 +53,7 @@ public class Autonomous extends CommandGroup {
     	
     	/* run to the auto zone */
     	addSequential(new TurnAngle(90));
-    	addSequential(new DriveStraight(3));
+    	addSequential(new DriveStraight(5));
     	
     	/* stack totes */
     	addSequential(new Dump());

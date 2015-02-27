@@ -64,15 +64,15 @@ public class Robot extends IterativeRobot {
         // constructed yet. Thus, their requires() statements may grab null 
         // pointers. Bad news. Don't move it.
         oi = new OI();
-
+        autonomousCommand = new Autonomous();
         /* build the autonomous selector menu */
-        autoChooser = new SendableChooser();
+        /*autoChooser = new SendableChooser();
         autoChooser.addObject("1 tote, 1 barrel", new Autonomous(1, 1));
         autoChooser.addDefault("2 totes, 1 barrel", new Autonomous(2, 1));
-        autoChooser.addDefault("2 totes, 2 barrels", new Autonomous(2, 2));
+        autoChooser.addObject("2 totes, 2 barrels", new Autonomous(2, 2));
         autoChooser.addObject("3 totes, 1 barrel", new Autonomous(3, 1));
         autoChooser.addObject("3 totes, 2 barrels", new Autonomous(3, 2));
-        autoChooser.addObject("No totes or barrels", new Autonomous(0, 0));
+        autoChooser.addObject("No totes or barrels", new Autonomous(0, 0));*/
     }
 
     /**
@@ -88,7 +88,7 @@ public class Robot extends IterativeRobot {
     }
 
     public void autonomousInit() {
-    	autonomousCommand = (Command) autoChooser.getSelected();
+    	//autonomousCommand = (Command) autoChooser.getSelected();
     	
         // schedule the autonomous command (example)
         if (autonomousCommand != null) autonomousCommand.start();
