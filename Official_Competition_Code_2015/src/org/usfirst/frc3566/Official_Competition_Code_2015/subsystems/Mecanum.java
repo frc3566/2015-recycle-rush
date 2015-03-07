@@ -109,7 +109,7 @@ public class Mecanum extends Subsystem {
         xSpeed=RobotConstants.Robot_Mecanum_CreepRun_Coefficient*Robot.oi.LogitechController.getRawAxis(0);
     	ySpeed=RobotConstants.Robot_Mecanum_CreepRun_Coefficient*Robot.oi.LogitechController.getRawAxis(1);
     	rotSpeed=RobotConstants.Robot_Mecanum_CreepTurn_Coefficient*Robot.oi.LogitechController.getRawAxis(2);
-    	RobotMap.mecanumMecanum_Control.mecanumDrive_Cartesian(xSpeed, ySpeed, rotSpeed, 0);
+    	RobotMap.mecanumMecanum_Control.mecanumDrive_Cartesian(-xSpeed, -ySpeed, -rotSpeed, 0);
     }
     public void SwitchStatus(){
     	ControllerStatus=!ControllerStatus;

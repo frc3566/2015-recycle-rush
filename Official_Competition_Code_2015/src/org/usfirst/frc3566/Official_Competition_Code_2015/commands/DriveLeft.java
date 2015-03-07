@@ -25,6 +25,7 @@ public class  DriveLeft extends Command {
 	double timeout;
 	double currentAngle;
     double diffAngle;
+    
     public DriveLeft() {
     	this(10);
     }
@@ -48,6 +49,7 @@ public class  DriveLeft extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	System.out.println(Robot.mecanum.getDistance());
     	currentAngle = RobotMap.gyro1.getAngle();
     	diffAngle = initialAngle-currentAngle;
     	RobotMap.mecanumMecanum_Control.mecanumDrive_Polar(0.80, 260.3, -(diffAngle*0.03));
@@ -56,7 +58,7 @@ public class  DriveLeft extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return this.isTimedOut()||((Robot.mecanum.getDistance()<=90)&&(this.timeSinceInitialized()>3));
+        return (Robot.mecanum.getDistance()<=180)&&(this.timeSinceInitialized()>2.8);
     }
 
     // Called once after isFinished returns true

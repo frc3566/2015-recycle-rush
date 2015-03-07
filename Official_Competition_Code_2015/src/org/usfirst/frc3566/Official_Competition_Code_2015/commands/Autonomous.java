@@ -18,17 +18,21 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class Autonomous extends CommandGroup {
     
 	public Autonomous() {
-		addSequential(new RaiseHookDistance(2.8));
-		addSequential(new BackUp());
-		addParallel(new DriveLeft());
-		addSequential(new LowerHookDistance(0.2));
+		//addSequential(new RaiseHookDistance(2));
+		//addSequential(new DriveStraight(5));
+		addSequential(new RaiseHookDistance(2.3));
+		addSequential(new DriveStraight(4.7));
+		/*addSequential(new BackUp());
+		addSequential(new DriveLeft());
+		addSequential(new LowerHookDistance(0.2)); // Kevin: shouldn't we lower further than this? -- Mr. B
 		addSequential(new Creep());
 		addSequential(new RaiseHookDistance(2.8));
 		addSequential(new BackUp());
-		addParallel(new DriveLeft());
+		addSequential(new DriveLeft());
 		addSequential(new LowerHookDistance(0.2));
-		addParallel(new Creep());
+		addSequential(new Creep());
 		addSequential(new RaiseHookDistance(0.5));
 		addSequential(new DriveBack());
+		addSequential(new Dump());*/
 	}
 }

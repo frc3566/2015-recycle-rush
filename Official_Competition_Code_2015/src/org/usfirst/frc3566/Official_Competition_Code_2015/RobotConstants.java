@@ -11,6 +11,6 @@ public class RobotConstants {
 	public static double Robot_RaiseElevator_Distance = 1.5;
 	public static double Robot_Picker_RaiseSpeed_Coefficient = -1.0;
 	public static double Robot_Picker_LowerSpeed_Coefficient = 1.0;
-	public static double Robot_Mecanum_CreepRun_Coefficient = 0.25;
-	public static double Robot_Mecanum_CreepTurn_Coefficient = 0.25;
+	public static double Robot_Mecanum_CreepRun_Coefficient = 0.35;
+	public static double Robot_Mecanum_CreepTurn_Coefficient = 0.35;
 }

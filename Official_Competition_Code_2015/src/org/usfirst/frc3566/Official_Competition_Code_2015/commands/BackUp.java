@@ -44,7 +44,7 @@ public class  BackUp extends Command {
     protected void execute() {
     	currentAngle = RobotMap.gyro1.getAngle();
     	diffAngle = initialAngle-currentAngle;
-    	RobotMap.mecanumMecanum_Control.mecanumDrive_Polar(-0.2,0, -(diffAngle*RobotConstants.Robot_Gyro_Constant));
+    	RobotMap.mecanumMecanum_Control.mecanumDrive_Polar(-0.25,0, -(diffAngle*RobotConstants.Robot_Gyro_Constant));
     }
 
     // Make this return true when this Command no longer needs to run execute()
