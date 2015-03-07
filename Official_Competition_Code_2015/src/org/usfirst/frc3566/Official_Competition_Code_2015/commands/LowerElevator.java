@@ -12,7 +12,9 @@
 package org.usfirst.frc3566.Official_Competition_Code_2015.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+
 import org.usfirst.frc3566.Official_Competition_Code_2015.Robot;
+import org.usfirst.frc3566.Official_Competition_Code_2015.RobotConstants;
 
 /**
  *
@@ -31,7 +33,7 @@ public class  LowerElevator extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.elevator.lowerElevator();
+    	Robot.elevator.lowerElevator(0.85);
     }
 
     // Called repeatedly when this Command is scheduled to run

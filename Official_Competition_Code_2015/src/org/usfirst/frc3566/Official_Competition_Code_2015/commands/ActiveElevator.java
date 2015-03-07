@@ -12,7 +12,9 @@
 package org.usfirst.frc3566.Official_Competition_Code_2015.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+
 import org.usfirst.frc3566.Official_Competition_Code_2015.Robot;
+import org.usfirst.frc3566.Official_Competition_Code_2015.RobotConstants;
 
 /**
  *
@@ -40,7 +42,7 @@ public class  ActiveElevator extends Command {
     	if (!lifting) {
         	if (!(Robot.conveyorSwitch.getE5() && Robot.bottomSwitches.getB2() && Robot.bottomSwitches.getB3()))
         	{
-        		Robot.elevator.raiseElevator();
+        		Robot.elevator.raiseElevator(RobotConstants.Robot_Elevator_RaiseSpeed_Coefficient);
         		lifting = true;
         	}
     	} else {

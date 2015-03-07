@@ -18,50 +18,17 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class Autonomous extends CommandGroup {
     
 	public Autonomous() {
-		this(1, 0);
-	}
-	
-	public Autonomous(int totes, int barrels) {
-    	/* ready position */
-    	//addParallel(new LowerPicker());
-		addSequential(new Dump());
-    	
-    	if (totes > 0) {
-        	/* approach and lift first tote */
-    		toteLift();
-        	
-        	if (barrels == 1) {
-            	/* lift barrel */
-            	//addSequential(new LiftAndHoldPicker());
-        	} else if (barrels > 1) {
-        		//addSequential(new RaisePicker());
-        		addParallel(new LowerPicker());
-        	}
-        	
-        	if (totes > 1) {
-        		toteLift();
-        	}
-        	
-        	if (barrels > 1) {
-        		addSequential(new LiftAndHoldPicker());
-        	}
-        	
-        	if (totes > 2) {
-        		toteLift();
-        	}
-    	}
-    	
-    	/* run to the auto zone */
-    	addSequential(new TurnAngle(90));
-    	addSequential(new DriveStraight(5));
-    	
-    	/* stack totes */
-    	addSequential(new Dump());
-    }
-	
-	private void toteLift() {
-    	addSequential(new DriveStraight());
-    	addParallel(new Creep());
-    	addSequential(new RaiseHookDistance());
+		addSequential(new RaiseHookDistance(2.8));
+		addSequential(new BackUp());
+		addParallel(new DriveLeft());
+		addSequential(new LowerHookDistance(0.2));
+		addSequential(new Creep());
+		addSequential(new RaiseHookDistance(2.8));
+		addSequential(new BackUp());
+		addParallel(new DriveLeft());
+		addSequential(new LowerHookDistance(0.2));
+		addParallel(new Creep());
+		addSequential(new RaiseHookDistance(0.5));
+		addSequential(new DriveBack());
 	}
 }

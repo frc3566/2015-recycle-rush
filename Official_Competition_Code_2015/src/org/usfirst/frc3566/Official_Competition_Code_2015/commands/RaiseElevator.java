@@ -32,7 +32,7 @@ public class  RaiseElevator extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.elevator.raiseElevator();
+    	Robot.elevator.raiseElevator(RobotConstants.Robot_Elevator_RaiseSpeed_Coefficient);
     }
 
     // Called repeatedly when this Command is scheduled to run
