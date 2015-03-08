@@ -10,6 +10,8 @@
 
 
 package org.usfirst.frc3566.Official_Competition_Code_2015.commands;
+import org.usfirst.frc3566.Official_Competition_Code_2015.RobotConstants;
+
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
@@ -17,22 +19,39 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
  */
 public class Autonomous extends CommandGroup {
     
-	public Autonomous() {
-		//addSequential(new RaiseHookDistance(2));
-		//addSequential(new DriveStraight(5));
-		addSequential(new RaiseHookDistance(2.3));
-		addSequential(new DriveStraight(4.7));
-		/*addSequential(new BackUp());
-		addSequential(new DriveLeft());
-		addSequential(new LowerHookDistance(0.2)); // Kevin: shouldn't we lower further than this? -- Mr. B
-		addSequential(new Creep());
-		addSequential(new RaiseHookDistance(2.8));
-		addSequential(new BackUp());
-		addSequential(new DriveLeft());
-		addSequential(new LowerHookDistance(0.2));
-		addSequential(new Creep());
-		addSequential(new RaiseHookDistance(0.5));
-		addSequential(new DriveBack());
-		addSequential(new Dump());*/
+	public Autonomous(int num) {
+		if (num==0){
+			addSequential(new RaiseHookDistance(2));
+			addSequential(new DriveStraight(4.7));
+			addSequential(new Dump());
+		}
+		if (num==2){
+			addSequential(new RaiseHookDistance(2.8));
+            addSequential(new BackUp());
+		    addSequential(new DriveLeft());
+	     	addSequential(new LowerHookDistance(1.6)); 
+	    	addSequential(new Creep());
+	    	addSequential(new RaiseHookDistance(2.8));
+	    	addSequential(new DriveBack(RobotConstants.Robot_Autonomous_DriveSpeed));
+	    	addSequential(new Dump());
+		}
+		if (num==1){
+			addSequential(new RaiseHookDistance(2.8));
+            addSequential(new BackUp());
+		    addSequential(new DriveLeft());
+	     	addSequential(new LowerHookDistance(1.6)); 
+	    	addSequential(new Creep());
+	    	addSequential(new RaiseHookDistance(2.8));
+	    	addSequential(new BackUp());
+    		addSequential(new CopyOfDriveLeft());
+	    	addSequential(new LowerHookDistance(1.6));
+	    	addSequential(new Creep());
+    		addSequential(new RaiseHookDistance(0.5));
+    		addSequential(new DriveBack(1));
+    		addSequential(new Dump());
+		}
+		if (num==3){
+			addSequential(new DriveStraight(2));
+		}
 	}
 }

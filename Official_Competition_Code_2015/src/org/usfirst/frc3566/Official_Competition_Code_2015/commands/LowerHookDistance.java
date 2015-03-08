@@ -41,13 +41,11 @@ public class  LowerHookDistance extends Command {
     	initialPosition = Robot.elevator.getPositionPotentiometer();
     	distance = 0;
     	currentPosition = Robot.elevator.getPositionPotentiometer();
+    	Robot.elevator.lowerElevator(1);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if (this.timeSinceInitialized()>=1.75){
-    		Robot.elevator.lowerElevator(1);
-    	}
     	currentPosition = Robot.elevator.getPositionPotentiometer();
     	distance = initialPosition-currentPosition;
     	if (distance>=lowerDistance){

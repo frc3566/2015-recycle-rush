@@ -93,7 +93,7 @@ public class OI {
 
 	    
         // SmartDashboard Buttons
-        SmartDashboard.putData("Autonomous", new Autonomous());
+        SmartDashboard.putData("Autonomous", new Autonomous(2));
 
         SmartDashboard.putData("RaiseElevator", new RaiseElevator());
 
@@ -125,9 +125,9 @@ public class OI {
 
         SmartDashboard.putData("BackUp", new BackUp());
 
-        SmartDashboard.putData("DriveBack", new DriveBack());
+        SmartDashboard.putData("DriveBack", new DriveBack(0.5));
         
-        SmartDashboard.putData("RaiseDistance",new RaiseHookDistance(3));
+        SmartDashboard.putData("RaiseDistance",new RaiseHookDistance(2.8));
         
         SmartDashboard.putData("LowerDistance", new LowerHookDistance(1.6));
 

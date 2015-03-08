@@ -52,13 +52,13 @@ public class  DriveLeft extends Command {
     	System.out.println(Robot.mecanum.getDistance());
     	currentAngle = RobotMap.gyro1.getAngle();
     	diffAngle = initialAngle-currentAngle;
-    	RobotMap.mecanumMecanum_Control.mecanumDrive_Polar(0.80, 260.3, -(diffAngle*0.03));
+    	RobotMap.mecanumMecanum_Control.mecanumDrive_Polar(1, 260.5, -(diffAngle*0.03));
     	
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return (Robot.mecanum.getDistance()<=180)&&(this.timeSinceInitialized()>2.8);
+        return (Robot.mecanum.getDistance()<=180)&&(this.timeSinceInitialized()>2);
     }
 
     // Called once after isFinished returns true

@@ -21,11 +21,13 @@ import org.usfirst.frc3566.Official_Competition_Code_2015.RobotMap;
  *
  */
 public class  DriveBack extends Command {
+	double speed;
 	double initialAngle;
 	double timeout;
 	double currentAngle;
     double diffAngle;
-    public DriveBack() {
+    public DriveBack(double sp) {
+    	speed=sp;
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 
@@ -36,7 +38,7 @@ public class  DriveBack extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	this.setTimeout(2.5);
+    	this.setTimeout(3.5);
     	initialAngle = RobotMap.gyro1.getAngle();
     }
 
@@ -44,7 +46,7 @@ public class  DriveBack extends Command {
     protected void execute() {
     	currentAngle = RobotMap.gyro1.getAngle();
     	diffAngle = initialAngle-currentAngle;
-    	RobotMap.mecanumMecanum_Control.mecanumDrive_Polar(-RobotConstants.Robot_Autonomous_DriveSpeed, 0, -(diffAngle*RobotConstants.Robot_Gyro_Constant));
+    	RobotMap.mecanumMecanum_Control.mecanumDrive_Polar(-speed, 0, -(diffAngle*RobotConstants.Robot_Gyro_Constant));
     }
 
     // Make this return true when this Command no longer needs to run execute()
