@@ -20,12 +20,12 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class Autonomous extends CommandGroup {
     
 	public Autonomous(int num) {
-		if (num==0){
+		if (num==0){ // pick up tote and dump in auto zone
 			addSequential(new RaiseHookDistance(2));
 			addSequential(new DriveStraight(4.7));
 			addSequential(new Dump());
 		}
-		if (num==2){
+		if (num==2){ // pick up 2 totes and back into auto zone
 			addSequential(new RaiseHookDistance(2.8));
             addSequential(new BackUp());
 		    addSequential(new DriveLeft());
@@ -35,7 +35,7 @@ public class Autonomous extends CommandGroup {
 	    	addSequential(new DriveBack(RobotConstants.Robot_Autonomous_DriveSpeed));
 	    	addSequential(new Dump());
 		}
-		if (num==1){
+		if (num==1){ // pick up 3 totes and stack in auto zone
 			addSequential(new RaiseHookDistance(2.8));
             addSequential(new BackUp());
 		    addSequential(new DriveLeft());
@@ -50,8 +50,13 @@ public class Autonomous extends CommandGroup {
     		addSequential(new DriveBack(1));
     		addSequential(new Dump());
 		}
-		if (num==3){
+		if (num==3){ // drive into auto zone
 			addSequential(new DriveStraight(2));
+		}
+		if (num==4) { // pick up barrel and put in auto zone
+			addSequential(new RaiseHookDistance(1.0));
+			addSequential(new DriveStraight(4.7));
+			addSequential(new Dump());
 		}
 	}
 }
