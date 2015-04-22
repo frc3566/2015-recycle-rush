@@ -58,5 +58,13 @@ public class Autonomous extends CommandGroup {
 			addSequential(new DriveStraight(4.7));
 			addSequential(new Dump());
 		}
+		if (num==5) { // pick up 2 totes from landfill
+			addSequential(new Creep());
+			addSequential(new RaiseHookDistance(1.5));
+			addParallel(new LowerHookDistance(0.5));
+			addSequential(new Creep());
+			addSequential(new RaiseHookDistance(1.0))
+			addSequential(new Backup());
+		}
 	}
 }
