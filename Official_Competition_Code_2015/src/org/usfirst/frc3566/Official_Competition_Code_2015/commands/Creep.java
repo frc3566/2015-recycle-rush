@@ -11,19 +11,17 @@
 
 package org.usfirst.frc3566.Official_Competition_Code_2015.commands;
 
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc3566.Official_Competition_Code_2015.Robot;
-import org.usfirst.frc3566.Official_Competition_Code_2015.RobotConstants;
 import org.usfirst.frc3566.Official_Competition_Code_2015.RobotMap;
 
 /**
  *
  */
-public class  Mecanum_Drive extends Command {
-    public Mecanum_Drive() {
+public class  Creep extends Command {
+
+    public Creep() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 
@@ -35,17 +33,17 @@ public class  Mecanum_Drive extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	this.setTimeout(2.5);
     }
 
-    // Called repeatedly when this Commaned is scheduled to run
+    // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	System.out.println(RobotMap.pdp.getCurrent(9));
-    	Robot.mecanum.Drive(RobotConstants.Robot_Mecanum_RunSpeed_Coefficient, RobotConstants.Robot_Mecanum_TurnSpeed_Coefficient);   
+    	RobotMap.mecanumMecanum_Control.mecanumDrive_Polar(0.15, 0, 0);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return this.isTimedOut();
     }
 
     // Called once after isFinished returns true
