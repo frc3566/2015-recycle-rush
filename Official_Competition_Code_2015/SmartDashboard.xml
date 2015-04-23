@@ -1,5 +1,26 @@
 <xml version="1.0">
 <dashboard>
+	<widget field="LowerHookDistance" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="286" y="0"/>
+	</widget>
+	<widget field="SwitchController" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="129" y="0"/>
+	</widget>
+	<widget field="LowerDistance" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="733"/>
+	</widget>
+	<widget field="DriveBack" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="699"/>
+	</widget>
+	<widget field="DriveLeft" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="665"/>
+	</widget>
+	<widget field="BackUp" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="631"/>
+	</widget>
+	<widget field="RaiseDistance" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="463"/>
+	</widget>
 	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.VideoStreamViewerExtension">
 		<location x="438" y="184"/>
 		<width>304</width>

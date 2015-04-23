@@ -25,6 +25,11 @@ public class Autonomous extends CommandGroup {
 			addSequential(new DriveStraight(4.7));
 			addSequential(new Dump());
 		}
+		if (num==1){ // pick up tote long-wise, turn and run and hold it
+			addSequential(new RaiseHookDistance(2));
+			addSequential(new TurnAngle(95));
+			addSequential(new DriveStraight(3.5));
+		}
 		if (num==2){ // pick up 2 totes and back into auto zone
 			addSequential(new RaiseHookDistance(2.8));
             addSequential(new BackUp());
@@ -35,7 +40,7 @@ public class Autonomous extends CommandGroup {
 	    	addSequential(new DriveBack(RobotConstants.Robot_Autonomous_DriveSpeed));
 	    	addSequential(new Dump());
 		}
-		if (num==1){ // pick up 3 totes and stack in auto zone
+		if (num==3){ // pick up 3 totes and stack in auto zone
 			addSequential(new RaiseHookDistance(2.8));
             addSequential(new BackUp());
 		    addSequential(new DriveLeft());
@@ -50,21 +55,21 @@ public class Autonomous extends CommandGroup {
     		addSequential(new DriveBack(1));
     		addSequential(new Dump());
 		}
-		if (num==3){ // drive into auto zone
+		if (num==4){ // drive into auto zone
 			addSequential(new DriveStraight(2));
 		}
-		if (num==4) { // pick up barrel and put in auto zone
+		if (num==5) { // pick up barrel and put in auto zone
 			addSequential(new RaiseHookDistance(1.0));
 			addSequential(new DriveStraight(4.7));
 			addSequential(new Dump());
 		}
-		if (num==5) { // pick up 2 totes from landfill
+		if (num==6) { // pick up 2 totes from landfill
 			addSequential(new Creep());
 			addSequential(new RaiseHookDistance(1.5));
 			addParallel(new LowerHookDistance(0.5));
 			addSequential(new Creep());
-			addSequential(new RaiseHookDistance(1.0))
-			addSequential(new Backup());
+			addSequential(new RaiseHookDistance(1.0));
+			addSequential(new BackUp());
 		}
 	}
 }
