@@ -71,5 +71,16 @@ public class Autonomous extends CommandGroup {
 			addSequential(new RaiseHookDistance(1.0));
 			addSequential(new BackUp());
 		}
+		if (num==7){//pick up 2 containers from the step
+			addSequential(new LowerHookDistance(1.5));
+			addSequential(new BackUp());
+			addSequential(new TurnAngle(95));
+			addSequential(new DriveStraight(3.5));
+			addSequential(new RaiseHookDistance(5));
+		}
+		if (num==8){
+			addSequential(new RaiseHookDistance(1.75));
+			addSequential(new DriveStraight(1));
+		}
 	}
 }
